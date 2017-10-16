@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#first{
+				width:200px ;
+				height: 100px ;
+				/*background: red;*/
+				background-color: rgb(213,324,9);
+				background-image: url(../../img/image1.jpg);
+				background-repeat: no-repeat;
+				background-position: 10px center; 
+				background-attachment:fixed;
+				/*可以复合写  30px 是指position*/
+				background: red url(../../img/image1.jpg) 10px  no-repeat;
+				/*css3使用*/
+				background-size: 100% 100%;
+				/*边框写法*/
+				/*border: 10px solid greenyellow;*/
+				border-width: 10px;
+				border-right-width: 10px;
+				border-style:solid;
+				border-color: lightskyblue;
+				/*边框形状*/
+				
+			}
+			#second{
+				width:0px ;
+				height: 0px ;
+				/*background: red url(../../img/image1.jpg) no-repeat;*/
+				background-size: 100% 100%;
+				/*边框形状*/
+				/*border-top: red 10px solid;
+				border-bottom: royalblue 10px solid;
+				border-right: blue 10px solid;
+				border-left: rosybrown 10px solid;*/
+				border-top: red 100px solid;
+				border-bottom: royalblue 100px solid;
+				border-right: blue 100px solid;
+				border-left: rosybrown 100px solid;
+				
+			}
+			/*设置边框圆角*/
+			#third{
+				width:0px ;
+				height: 0px ;
+				border-top: red 100px solid;
+				border-bottom: royalblue 100px solid;
+				border-right: blue 100px solid;
+				border-left: transparent 100px solid;
+				/*css3 特性;*/
+				border-radius: 20%;
+				
+			}
+			/*设置边框圆角*/
+			#four {
+				width:0px ;
+				height: 0px ;
+				border-top: #CCCCCC 100px solid;
+				border-bottom: #CCCCCC 100px solid;
+				border-right: transparent 100px solid;
+				border-left: #CCCCCC 100px solid ;
+				/*css3 特性;*/
+				border-radius: 50%;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="first">
+			<!--
+            	作者：offline
+            	时间：2017-10-13
+            	描述：
+            	背景图平铺 background-repeat
+            	背景图定位 
+            	背景图尺寸 background-size css3样式 不兼容需注意
+            -->
+			
+		</div>
+		<hr />
+		<div id="second"></div>
+		<div id="third"></div>
+		<div id="four"></div>
+		
+	</body>
+</html>

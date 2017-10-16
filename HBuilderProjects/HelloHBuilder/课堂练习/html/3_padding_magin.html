@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#first{
+				width: 200px;
+				
+				border: 2px red solid;
+				padding-left: 20px;
+				padding-bottom: 30px;
+				padding-top: 20px;
+				padding-right: 30px;
+				/*复合写法 */
+				padding:10px;/*上右下左都是10*/
+				padding:10px 20px;/*上下是10 左右是20*/
+				padding:10px 20px 30px;/*上是10 左右是20 下是30*/
+				padding:10px 20px 30px 40px;/*上是10 右是20 下是30 左40*/
+		
+			}
+			/*外边距*/
+			#second{
+				width: 200px;
+				
+				border: 2px red solid;
+				margin-left: 20px;
+				margin-bottom: 30px;
+				margin-top: 20px;
+				margin-right: 30px;
+				/*复合写法 */
+				margin:10px;/*上右下左都是10*/
+				margin:10px 20px;/*上下是10 左右是20*/
+				margin:10px 20px 30px;/*上是10 左右是20 下是30*/
+				margin:10px 20px 30px 40px;/*上是10 右是20 下是30 左40*/
+			}
+			#third{
+				width: 300px;
+				background: red;
+				/*border: 2px solid black;*/
+				overflow: hidden;
+				
+			}
+			#third_2{
+				width: 100px;
+				height: 100px;
+				background: blue;
+				/*margin:10px 20px 30px 40px;/*上是10 右是20 下是30 左40*/*/
+				margin-top: 20px;
+				/*margin-bottom: 30px;*/
+			}
+			#third_3{
+				width: 300px;
+				height: 200px;
+				background: goldenrod;
+				/*margin:10px 20px 30px 40px;/*上是10 右是20 下是30 左40*/*/
+				/*margin-top: 30px;*/
+				
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="first">大家好呀
+			<!--<img id="image" src="../../img/img2.jpg" alt="">-->
+		</div>
+		<br /> <br />
+		<hr />
+		<div id="second">大家好呀
+		</div>
+		<div id="third">
+			<div id="third_2"></div>
+			<div id="third_3"></div>
+		</div>
+<br />  
+		
+		<!--margin的小性子
+			标签的嵌套 确定父子级关系
+			第一个子集的magin-top 会在特殊情况下穿透父级
+			解决方案：给父级加边框,2 overflow: hidden 3用父级的padding代替
+			自己设置了不管用~。~
+			兄弟关系的magin-top 会叠压
+        -->
+	</body>
+</html>

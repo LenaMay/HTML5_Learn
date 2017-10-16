@@ -1,0 +1,23 @@
+div{
+	height: 280px;
+
+}
+#first{
+	width: 535px;
+	background: red url(../../img/image1.jpg) center center no-repeat;
+	background-size: 20% 20%;
+
+}
+#second{
+	width: 435px;
+	background: orange url(../../img/img2.jpg) no-repeat;
+	background-size: 20% 20%;
+	background-position-x:right ;
+
+}
+#third{
+	width: 400px;
+	background: url(../../img/img3.jpg) no-repeat;
+	background-size: 50% 50%;
+
+}
