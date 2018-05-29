@@ -9,5 +9,38 @@
 		<div id="first">first</div>
 		<div id="second">second</div>
 		<div id="third">third</div>
+		<script>
+			function changecolor(){
+				document.getElementById("first").style.backgroundColor = "dodgerblue"
+			}
+			changecolor()
+		</script>
+		
+		
+		<div>
+			<p id="pid"> hello</p>
+			<button id="btn">hhhhh </button>
+			//句柄不会覆盖
+			<script>
+				var x = document.getElementById("btn");
+				x.addEventListener("click",hello);
+				x.addEventListener("click",word);
+				x.removeEventListener("click",hello);
+
+				function hello () {
+					alert("hello")
+				}
+				function word () {
+					alert("word")
+				}
+			
+				document.getElementById("btn").addEventListener("click",function(){ alert("hello")});
+			</script>
+			
+			
+		</div>
+		
+		
+		
 	</body>
 </html>

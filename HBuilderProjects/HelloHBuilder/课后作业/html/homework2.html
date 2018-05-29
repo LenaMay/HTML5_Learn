@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/homeW1.css" />
+
+	</head>
+	<body>
+		<p> 事件流</p>
+		<div id="div">
+			<button id="btn1">按钮1</button>
+			<button id="btn2">按钮2</button>
+			<button id="btn3">按钮3</button>
+			<button id="btn4">事件对象</button>
+			<a href="http://www.baidu.com" id="aid">事件的默认行为</a>
+				<script>
+					function demo () {
+						alert("hello html事件处理");
+					}
+				</script>
+				
+				<script>
+					var btn1 = document.getElementById("btn1");
+					btn1.onclick = chlick1;	
+					btn1.onclick = chlick2;//1会被覆盖掉
+
+					function chlick1 () {
+						alert("DEMO 0级事件处理1");
+					}
+					function chlick2 () {
+						alert("DEMO 0级事件处理2");
+					}	
+				</script>
+				
+				<script>
+					var btn2 = document.getElementById("btn2");
+					btn2.addEventListener("click",chlick1);
+					btn2.addEventListener("click",chlick2);//不会被覆盖 依次执行
+					function chlick1 () {
+						alert("DEMO 2级事件处理1");
+					}
+					function chlick2 () {
+						alert("DEMO 2级事件处理2");
+					}	
+				</script>
+				<script>
+					var btn3 = document.getElementById("btn3");
+					if(btn3.addEventListener){
+						btn3.addEventListener("click",demo);
+					}else if(btn3.attachEvent("onclick",demo)){
+						btn3.attachEvent("onclick",demo)
+					}else{
+						btn3.onclick=demo();
+					}
+					function demo () {
+						alert("根据浏览器");
+					}
+				</script>
+				<script>
+					document.getElementById("btn4").addEventListener("click",showType);
+					document.getElementById("div").addEventListener("click",showDIv);
+					document.getElementById("aid").addEventListener("click",showA);
+					
+					function showType (event) {
+						alert(event.type+event.target);
+						event.stopPropagation();//阻止事件冒泡
+					}
+					function showDIv (event) {
+						alert(event.type+event.target);
+					}
+					function showA (event) {
+						alert(event.type+event.backgroundColor);
+						event.stopPropagation();//阻止事件冒泡
+						event.preventDefault();//阻止默认事件 就不会跳转了
+					}
+					//两个都会执行，也就是时间冒泡我们要阻止事件冒泡
+				</script>
+		</div>
+		
+	</body>
+</html>

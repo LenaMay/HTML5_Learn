@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn" onclick="btnclick()">跳转新页面</button>
+        <p id="ptime"></p>
+        	<button id="stopBtn" onclick="stop()">停止</button>
+        	<br />
+        	<button id="stopBt" onclick="delayRun()">延时执行</button>
+        	<button id="stoptimeBtn" onclick="stopDelayRun()">停止延时执行</button>
+        	<hr />
+        	<br />
+		<script>
+			
+			function btnclick(){
+//				window.open("homework2.html","hahaahh");
+				window.close();
+			}
+			
+			//计时器
+			var mytime = setInterval(function(){
+				getTime();
+			},1000);
+			function  getTime(){
+				var d = new Date();
+				var t = d.toLocaleTimeString();
+				document.getElementById("ptime").innerHTML = t;
+			}
+			function stop(){
+				clearInterval(mytime);
+			}
+			var win;
+			function delayRun(){
+			    alert("4523454325");
+				win = setTimeout(function(){
+					delayRun();
+				},5000);
+			}
+			function stopDelayRun(){
+				clearTimeout(win);
+			}
+			
+		</script>
+		//history对象
+		<br />
+		 <a href="JS4DOM对象控制HTML元素.html">跳转到4页面</a>
+        	<button id="stopBt" onclick="goJS4()">回到4页面</button>
+        	<br />
+        	<input type="text" id="userName" />
+        	<br />
+        <button id="" onclick="login()">登录</button>
+
+		<script>
+			function goJS4(){
+				history.forward()
+			}
+			function login(){
+				var va = document.getElementById("userName").value;
+				if(va=="haha"){
+					alert(va);
+				}else{
+					alert("错误啦");
+				}
+			}	
+		</script>
+		//loction对象
+		<br />
+		<p id="hpdi">hh</p>
+		<br />
+		<button onclick="getLoc()">获取loction信息</button>
+		<script>
+			function getLoc(){
+//			var  q = window.location.hostname;//主机名称get
+//			var  q = window.location.pathname;//页面路径
+//			var  q = window.location.port;//端口
+//			var  q = window.location.protocol;//web协议
+//			var  q = window.location.href;//当前页面URL
+
+		
+//			document.getElementById("hpdi").innerHTML = q;
+			location.assign("http://baidu.com");
+			}	
+		</script>
+		//Screen对象 对象包含有关用户屏幕信息
+		<br />
+		<p id="sdi">hh</p>
+		<br />
+		<script>
+			document.write("可用高度："+screen.availHeight+"可用宽度："+screen.availWidth);
+			document.write("可用高度："+screen.height+"可用宽度："+screen.width);
+
+		</script>
+			
+		
+	</body>
+</html>

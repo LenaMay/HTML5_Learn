@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/homeW1.css" />
+	</head>
+	<body onload="startTime()">
+		字符串
+		<div>
+			<script>
+				var str = "hello Word";
+				var str1 = "er,rt,te,rtr";
+//				document.write("changdu:"+str.length);
+//				document.write(str.indexOf("hello"));
+//				document.write(str.match("word1"));
+//				document.write(str.replace("word","hehehehehhe"));
+//				document.write(str.toUpperCase());
+//				document.write(str.toLowerCase());
+				//转换数组
+//				var s = str1.split(",");
+//				document.write(s[1]);
+			</script>	
+		</div>
+		日期对象
+		<div>
+			<script>
+			   var date = new Date();
+//			   document.write(date);
+//			   document.write(date.getFullYear());
+			   date.setFullYear(1010,1,1);
+			   document.write(date);
+			   function startTime(){
+			   	var  today = new Date();
+			   	var h = today.getHours();
+			   	var m = today.getMinutes();
+			   	var s = today.getSeconds();
+			   	m = checkTime(m);
+			   	s = checkTime(s);
+			   	document.getElementById("text").innerHTML = h + ":"+m+":"+s;
+			   	t = setTimeout(function(){
+			   		startTime();
+			   	},1000);
+			   }
+			   function checkTime(i){
+			   	if(i<10){
+			   		i = "0"+ i;
+			   	}
+			   	return i;
+			   }
+			</script>
+			<p id="text"></p>
+		</div>
+		<div>
+			<script>
+				var a = ["5","3"];
+				var b = ["2","4"];
+				var c = a.concat(b);
+//				document.write(c);
+//				document.write(c.sort());//升序排列
+//				document.write(c.sort(function(a,b){
+//					//这里指的是b到a 倒序  a-b就是a到b 升序
+//					return b-a;
+//				}))
+                c.push("9");
+//				document.write(c);
+				document.write(c.reverse());//数组反转
+			</script>
+			
+		</div>
+		<div>
+			<script>
+//				document.write(Math.round(2.5));//四舍五入的方法
+//				document.write(parseInt(Math.random()*10)+1);//随机数
+				document.write(Math.max(3,4,5,23,4,5,232,4,54));//
+				document.write(Math.min(0,4,5,23,4,5,232,4,54));//
+				document.write(Math.abs(-2.5))//绝对值
+
+			</script>
+			
+		</div>
+	</body>
+</html>
